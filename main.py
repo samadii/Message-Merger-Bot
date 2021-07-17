@@ -103,7 +103,7 @@ def main():
     dp.add_handler(CommandHandler("help", send_help))
     dp.add_handler(CommandHandler("done", done))
     dp.add_handler(CommandHandler("split", split_messages))
-    dp.add_handler(MessageHandler(Filters.forwarded & Filters.text, store_forwarded_message))
+    dp.add_handler(MessageHandler(Filters.text, store_forwarded_message))
     dp.add_error_handler(error_callback)
     updater.start_polling()
     logger.info("Ready to rock..!")
